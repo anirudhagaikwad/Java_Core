@@ -13,7 +13,7 @@ public class PolymorphisamJava {
 		
 		AddOperation objChild=new AddOperation();
 		objChild.addition(8,6); // call override method
-		int res=objArith.addition(51,20,8);
+		int res=objChild.addition(51,20,8);
 		System.out.println("Result = "+res);
 		
 		
@@ -28,7 +28,9 @@ class ArithmeticOperation
 /*
  * Method Overloading : is concept that allows to declare multiple methods with same name but different parameters in same class.
  *                    : It can be done by changing number of arguments or by changing the data-type of arguments.
- *                    : If tow or more methods have same name and same parameter list but differs in return type can not be overloaded.	
+ *                    : If tow or more methods have same name and same parameter list but differs in return type can not be overloaded.
+ *                    : Private,final and static methods cannot be overridden.
+ *                    	
  */
 	int x,y,z;
 	// Method overloading 
