@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class AutoBoxing_UnBoxing {
 	
@@ -34,6 +35,39 @@ public class AutoBoxing_UnBoxing {
 						System.out.println("int value :"+first+","+second+","+third);
 		
 	} // unboxingJava()
+	
+	
+	
+	
+void autoboxing_unboxing()
+{
+	Integer i=new Integer(-8);
+	
+// Unboxing through method invocation
+	int absVal = absoluteValue(i);
+	System.out.println("Absolute Value of "+i+" = "+absVal);
+	
+	
+	List<Double> id=new ArrayList<>();
+	id.add(3.1416); // PI is autoboxed through method invocation
+	
+// Unboxing through assignments
+	double pi=id.get(0);
+	System.out.println("PI = "+pi);
+	
+	
+	
+	
+	
+} // autoboxing_unboxing()
+
+int absoluteValue(int i)
+{
+	return (i<0)?-i:i;
+}
+
+
+
 
 	public static void main(String[] args) {
 		
