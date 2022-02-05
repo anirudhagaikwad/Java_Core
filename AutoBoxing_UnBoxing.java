@@ -74,6 +74,7 @@ int absoluteValue(int i)
 		AutoBoxing_UnBoxing obj = new AutoBoxing_UnBoxing();
 		obj.autoboxingJava();
 		obj.unboxingJava();
+		obj.autoboxing_unboxing();
 
 	} // end main()
 
