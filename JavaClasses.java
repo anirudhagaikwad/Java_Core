@@ -16,6 +16,15 @@ public class JavaClasses {
 		OuterClass.InnerClass.InnerInnerClass objInnerInnerClass = objInnerClass.new InnerInnerClass(); // create InnerInnerClass object
 		objInnerInnerClass.accessOuter(); // call InnerInnerClass Method using InnerInnerClass object
 
+		AnonymousTest objAnonymousTest =new AnonymousTest();
+		objAnonymousTest.method();
+		
+		
+		LocalClassTest objLocalClassTest=new LocalClassTest();
+		objLocalClassTest.validatePhoneNumber("9158888608","123546");
+		
+		
+		
 	} // end main()
 
 }//end class
@@ -77,6 +86,116 @@ class OuterClass
 	} // end InnerClass
 	
 } // end OuterClass
+
+
+
+
+
+/*
+ * Anonymous class enable you to make your code more concise
+ * A class without any name is called Anonymous class
+ * 
+ */
+
+interface MathOperation{
+	void mathOperationType();
+}
+
+class AnonymousTest
+{
+	
+	void method()
+	{
+		MathOperation mObj=new MathOperation() // Anonymous class create
+	
+			{
+		public void mathOperationType()
+		{
+			System.out.println("Its method from Anonymous class");
+		}
+			}; // end Anonymous class
+			
+			mObj.mathOperationType();
+	}
+	
+} // end AnonymousTest
+
+
+
+
+
+/*
+ * Local Class : are define in block , typically this blocks are methods
+ */
+
+
+class LocalClassTest
+{
+	String regularExpression ="[^0-9]";
+	
+	public void validatePhoneNumber(String phoneNumber1,String phoneNumber2)
+	{
+		final int numLenght=10;
+		
+		class PhoneNumber // Local class start here
+		{
+			String formattedPhoneNumber=null;
+			
+			PhoneNumber(String phoneNumber)
+			{
+				String currentNumber=phoneNumber.replaceAll(regularExpression,"");
+				if(currentNumber.length()==numLenght)
+				{
+					formattedPhoneNumber=currentNumber;
+				}
+				else {formattedPhoneNumber=null;}
+			} // end local class constructor
+			
+			public String getNumber()
+			{
+				return formattedPhoneNumber;
+			}
+			
+			public void printOriginalNumber()
+			{
+				System.out.println("Original numbers are "+phoneNumber1+" and "+phoneNumber2);
+			}
+			
+			
+		} // end Local Class
+		
+		PhoneNumber objLocalClass1=new PhoneNumber(phoneNumber1);
+		PhoneNumber objLocalClass2=new PhoneNumber(phoneNumber2);
+		
+		objLocalClass1.printOriginalNumber();
+				
+		if(objLocalClass1.getNumber()==null)
+		{
+			System.out.println(objLocalClass1.getNumber()+" Phone number is invalid....");
+		}
+		else {System.out.println("Phone number is valid...."+objLocalClass1.getNumber());}
+		
+		
+		if(objLocalClass2.getNumber()==null)
+		{
+			System.out.println(objLocalClass2.getNumber()+" Phone number is invalid....");
+		}
+		else {System.out.println("Phone number is valid...."+objLocalClass2.getNumber());}
+		
+		
+	} // end validatePhoneNumber()
+		
+		
+} // end LocalClassTest
+
+
+
+
+
+
+
+
+
 
 
 
